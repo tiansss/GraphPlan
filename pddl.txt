@@ -1,0 +1,14 @@
+Init(CleanPan),
+Goal(FriedEggs,BoiledVegetables,Dinner,~CleanPan),
+action(Mix,
+PRECOND:FriedEggs,BoiledVegetables
+EFFECT:Dinner)
+action(Fry,
+PRECOND:~FriedEggs,CleanPan
+EFFECT:FriedEggs,~CleanPan)
+action(Boil,
+PRECOND:CleanPan,~BoiledVegetables
+EFFECT:~CleanPan,BoiledVegetables)
+action(Wash,
+PRECOND:~CleanPan
+EFFECT:CleanPan)
